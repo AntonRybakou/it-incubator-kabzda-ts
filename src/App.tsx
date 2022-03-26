@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 
 function Hello() {
-    debugger
     alert('Hello IT-KAMASUTRA');
 }
 
@@ -10,18 +9,24 @@ Hello();
 
 
 function App() {
-    debugger
+    console.log("App rendering");
     return (
         <div>
-            This is APP component
+            <AppTitle/>
             <Rating/>
             <Accordion/>
+            <Rating/>
         </div>
     );
 }
 
+function AppTitle() {
+    console.log("AppTitle rendering");
+    return <>This is APP component</>
+}
+
 function Rating() {
-    debugger
+    console.log("Rating rendering")
     return (
         <div>
             <Star/>
@@ -34,10 +39,26 @@ function Rating() {
 }
 
 function Accordion() {
-    debugger
+    console.log("Accordion rendering")
     return (
         <div>
-            <h3>Меню</h3>
+            <AccordionTitle/>
+            <AccordionBody/>
+        </div>
+    )
+}
+
+function AccordionTitle() {
+    console.log("Accordion Title rendering")
+    return (
+        <h3>Menu</h3>
+    )
+}
+
+function AccordionBody() {
+    console.log("Accordion Body rendering")
+    return (
+        <div>
             <ul>
                 <li>1</li>
                 <li>2</li>
@@ -48,10 +69,9 @@ function Accordion() {
 }
 
 function Star() {
+    console.log("Star rendering")
     return (
-        <div>
-            star
-        </div>
+        <div>star</div>
     )
 }
 
