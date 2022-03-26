@@ -1,78 +1,32 @@
 import React from 'react';
 import './App.css';
-
-function Hello() {
-    alert('Hello IT-KAMASUTRA');
-}
-
-Hello();
-
+import Accordion from "./components/Accordion/Accordion";
+import {Rating} from "./components/Rating/Rating";
 
 function App() {
     console.log("App rendering");
     return (
         <div>
-            <AppTitle/>
-            <Rating/>
-            <Accordion/>
-            <Rating/>
+            <PageTitle title={"This is APP component"}/>
+            <PageTitle title={"My friends"}/>
+            Article 1
+            <Rating value={1}/>
+            <Accordion title={"Menu vkusnoe"}/>
+            <Accordion title={"Menu tak sebe"}/>
+            Article 2
+            <Rating value={0}/>
+            <Rating value={1}/>
+            <Rating value={2}/>
+            <Rating value={3}/>
+            <Rating value={4}/>
+            <Rating value={5}/>
         </div>
     );
 }
 
-function AppTitle() {
-    console.log("AppTitle rendering");
-    return <>This is APP component</>
-}
-
-function Rating() {
-    console.log("Rating rendering")
-    return (
-        <div>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
-        </div>
-    )
-}
-
-function Accordion() {
-    console.log("Accordion rendering")
-    return (
-        <div>
-            <AccordionTitle/>
-            <AccordionBody/>
-        </div>
-    )
-}
-
-function AccordionTitle() {
-    console.log("Accordion Title rendering")
-    return (
-        <h3>Menu</h3>
-    )
-}
-
-function AccordionBody() {
-    console.log("Accordion Body rendering")
-    return (
-        <div>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
-        </div>
-    )
-}
-
-function Star() {
-    console.log("Star rendering")
-    return (
-        <div>star</div>
-    )
+function PageTitle(props: any) {
+    console.log("PageTitle rendering");
+    return <h1>{ props.title }</h1>
 }
 
 export default App;
