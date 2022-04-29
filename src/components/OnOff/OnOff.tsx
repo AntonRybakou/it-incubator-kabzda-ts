@@ -7,12 +7,15 @@ type OnOffType = {
 
 
 export const OnOff: React.FC<OnOffType> = (props) => {
+
     // Define local state (props value "true" or "false")
     let [state, setState] = useState(props.value);
+
     // Set state to "false" (by pressing OFF)
     const onClickHandlerOff = () => {
         setState(false);
     }
+
     // Set state to "true" (by pressing ON)
     const onClickHandlerOn = () => {
         setState(true);
