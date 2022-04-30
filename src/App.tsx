@@ -23,7 +23,7 @@ function App() {
 
             <hr/>
 
-            <UncontrolledRating value={0}/>
+            <UncontrolledRating />
             {/*<UncontrolledRating value={4}/>*/}
 
             {/*<PageTitle title={"This is APP component"}/>*/}
