@@ -1,22 +1,16 @@
 import React, {useState} from "react";
 
-type AccordionPropsType = {
+type UncontrolledAccordionPropsType = {
     titleValue: string;
 }
 
-function UncontrolledAccordion(props: AccordionPropsType) {
+function UncontrolledAccordion(props: UncontrolledAccordionPropsType) {
     console.log("UncontrolledAccordion rendering")
-
     const [state, setState] = useState(true);
-
-    const onClickHandler = () => {
-        setState(!state)
-    }
 
     return (
         <div>
-            <AccordionTitle title={props.titleValue}/>
-            <button onClick={onClickHandler}>TOGGLE</button>
+            <AccordionTitle title={props.titleValue} onClick={() => {setState(!state)}}/>
             {!state && <AccordionBody title={props.titleValue}/>}
         </div>
     )
@@ -25,12 +19,13 @@ function UncontrolledAccordion(props: AccordionPropsType) {
 
 type AccordionTitlePropsType = {
     title: string;
+    onClick: () => void;
 }
 
 function AccordionTitle(props: AccordionTitlePropsType) {
     console.log("UncontrolledAccordion Title rendering")
     return (
-        <h3>-- {props.title} --</h3>
+        <h3 onClick={() => props.onClick()}>-- {props.title} --</h3>
     )
 }
 
