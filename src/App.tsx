@@ -1,31 +1,33 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 // import Accordion from "./components/Accordion/Accordion";
-import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
-import {Rating} from "./components/Rating/Rating";
-import {OnOff} from "./components/OnOff/OnOff";
+import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
+import Accordion from "./components/Accordion/Accordion";
 
 function App() {
     console.log("App rendering");
+
+    let [ratingValue, setRatingValue] = useState<RatingValueType>(0);
+    let [accordionValue, setAccordionValue] = useState<boolean>(false);
+
     return (
         <div>
 
-            <OnOff value={false}/>
-            <hr/>
+            <Rating value={ratingValue} onClick={setRatingValue}/>
 
-            {/*<Accordion titleValue={"Menu"} collapsed={true}/>*/}
-            {/*<Accordion titleValue={"Users"} collapsed={false}/>*/}
+            {/*<OnOff value={false}/>*/}
             {/*<hr/>*/}
-
-            <UncontrolledAccordion titleValue={"Menu"}/>
-            <UncontrolledAccordion titleValue={"Users"}/>
-
+            <Accordion
+                titleValue={"Menu"}
+                accordionValue={accordionValue}
+                setAccordionValue={setAccordionValue}/>
+            {/*<hr/>*/}
+            {/*<UncontrolledAccordion titleValue={"Menu"}/>*/}
+            {/*<UncontrolledAccordion titleValue={"Users"}/>*/}
             <hr/>
-
-            <UncontrolledRating />
-            {/*<UncontrolledRating value={4}/>*/}
-
+            <UncontrolledRating/>
+            {/*<hr/>*/}
             {/*<PageTitle title={"This is APP component"}/>*/}
             {/*<PageTitle title={"My friends"}/>*/}
             {/*Article 1*/}
