@@ -4,20 +4,25 @@ import './App.css';
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import Accordion from "./components/Accordion/Accordion";
+import {OnOff} from "./components/OnOff/OnOff";
+import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
 
 function App() {
     console.log("App rendering");
 
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0);
     let [accordionValue, setAccordionValue] = useState<boolean>(false);
+    let [onOffValue, setOnOffValue] = useState<boolean>(false);
 
     return (
         <div>
 
             <Rating value={ratingValue} onClick={setRatingValue}/>
 
-            {/*<OnOff value={false}/>*/}
-            {/*<hr/>*/}
+            <UncontrolledOnOff
+                onOffValue={onOffValue}
+                setOnOffValue={setOnOffValue}/>
+            <hr/>
             <Accordion
                 titleValue={"Menu"}
                 accordionValue={accordionValue}
