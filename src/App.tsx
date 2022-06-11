@@ -1,10 +1,8 @@
 import React, {useState} from 'react';
 import './App.css';
-// import Accordion from "./components/Accordion/Accordion";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 import Accordion from "./components/Accordion/Accordion";
-import {OnOff} from "./components/OnOff/OnOff";
 import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
 
 function App() {
@@ -16,12 +14,14 @@ function App() {
 
     return (
         <div>
-
+            <hr/>
             <Rating value={ratingValue} onClick={setRatingValue}/>
 
+            <hr/>
             <UncontrolledOnOff
                 onOffValue={onOffValue}
                 setOnOffValue={setOnOffValue}/>
+
             <hr/>
             <Accordion
                 titleValue={"Menu"}
@@ -30,6 +30,7 @@ function App() {
             {/*<hr/>*/}
             {/*<UncontrolledAccordion titleValue={"Menu"}/>*/}
             {/*<UncontrolledAccordion titleValue={"Users"}/>*/}
+
             <hr/>
             <UncontrolledRating/>
             {/*<hr/>*/}
